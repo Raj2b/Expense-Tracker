@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import SideNav from './_components/SideNav'
 import DashboardHeader from './_components/DashboardHeader'
 import {db} from '../../../utils/dbConfig'
@@ -10,9 +10,11 @@ import {useRouter} from 'next/navigation'
 
 
 function DashboardLayout({children}) {
+    const [sidebarOpen, setSidebarOpen] = useState(false);
 
     const {user}=useUser();
     const router=useRouter();
+    
     useEffect(()=>{
         user&&checkUserBudgets();
     },[user])
@@ -29,11 +31,14 @@ function DashboardLayout({children}) {
     }
   return (
     <div>
-        <div className='fixed md:w-64 hidden md:block'>
-            <SideNav/>
+        <div className={`fixed top-0 left-0 h-full w-64 bg-white shadow transform transition-transform duration-300 z-50 
+            ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'} md:translate-x-0`}>
+            <SideNav setSidebarOpen={setSidebarOpen} />
+
         </div>
+
         <div className='md:ml-64'>
-            <DashboardHeader/>
+            <DashboardHeader setSidebarOpen={setSidebarOpen}/>
         {children}
         </div>
         </div>

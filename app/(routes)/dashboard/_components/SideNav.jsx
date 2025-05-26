@@ -50,7 +50,7 @@ const path=usePathname();
         />
         <div className='mt-5'>
             {menuList.map((menu)=>(
-                <Link key={menu.id} href={menu.path}>
+                <Link key={menu.id} href={menu.path} onClick={() => setSidebarOpen(false)}>
                 <h2  className={`flex gap-2 items-center text-gray-500 
                 mb-2
                 font-medium p-5 cursor-pointer rounded-md hover:text-primary hover:bg-blue-100
