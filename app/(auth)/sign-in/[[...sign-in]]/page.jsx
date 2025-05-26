@@ -73,7 +73,7 @@ export default function Page() {
           </p>
         </div>
 
-        <SignIn/>
+        <SignIn redirectUrl='/dashboard/budgets'/>
       </div>
     </main>
   </div>

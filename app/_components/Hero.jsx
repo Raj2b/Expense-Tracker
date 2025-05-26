@@ -29,12 +29,11 @@ function Hero() {
     </div>
     <Image src={'/dashboard.png'}
         alt='dashboard'
-        width={1000}
-        height={700}
+        width={1400}
+        height={900}
         className='-mt-9 rounded-xl border-2'
         />
   </section>
-
 
   )
 }
