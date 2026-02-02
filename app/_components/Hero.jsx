@@ -1,41 +1,67 @@
-import Image from 'next/image'
-import React from 'react'
+import Image from "next/image";
+import React from "react";
 
 function Hero() {
   return (
-    <section className="bg-gray-50 flex items-center flex-col">
-    <div className="mx-auto max-w-screen-xl px-4 py-32 lg:flex ">
-      <div className="mx-auto max-w-xl text-center">
-        <h1 className="text-3xl font-extrabold sm:text-5xl">
-          Manage Your Expenses
-          <strong className="font-extrabold text-primary sm:block"> Control Your Money </strong>
-        </h1>
-  
-        <p className="mt-4 sm:text-xl/relaxed">
-          Start creating your budget and save tons of money
-        </p>
-  
-        <div className="mt-8 flex flex-wrap justify-center gap-4">
-          <a
-            className="block w-full rounded-sm bg-primary px-12 py-3 text-sm font-medium text-white shadow-sm hover:bg-blue-700 focus:ring-3 focus:outline-hidden sm:w-auto"
-            href="/sign-in"
+    <section className="relative overflow-hidden">
+      {/* Background image */}
+      <Image
+        src="/heropage.png"
+        alt="Easy Expense background"
+        fill
+        priority
+        className="object-cover"
+      />
+
+      {/* Gradient overlay for contrast (no ugly box) */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black/55 via-black/25 to-black/45" />
+
+      {/* Content */}
+      <div className="relative z-10 flex flex-col items-center">
+        <div className="mx-auto max-w-screen-xl px-4 py-28 sm:py-32 text-center">
+          <h1
+            className="text-4xl font-extrabold text-white sm:text-6xl"
+            style={{ textShadow: "0 6px 18px rgba(0,0,0,0.65)" }}
           >
-            Get Started
-          </a>
-  
-         
+            Manage Your Expenses
+            <span
+              className="block text-primary"
+              style={{ textShadow: "0 6px 18px rgba(0,0,0,0.55)" }}
+            >
+              Control Your Money
+            </span>
+          </h1>
+
+          <p
+            className="mt-6 text-lg text-white/95 sm:text-xl"
+            style={{ textShadow: "0 4px 14px rgba(0,0,0,0.5)" }}
+          >
+            Start creating your budget and save tons of money
+          </p>
+
+          <div className="mt-10 flex justify-center">
+            <a
+              href="/sign-in"
+              className="rounded-md bg-primary px-10 py-3 text-sm font-semibold text-white shadow-lg transition hover:bg-blue-700"
+            >
+              Get Started
+            </a>
+          </div>
+        </div>
+
+        {/* Dashboard preview (keep it bright + clean) */}
+        <div className="relative z-20 -mt-16 sm:-mt-20 px-4">
+          <Image
+            src="/dashboardnew.png"
+            alt="Dashboard preview"
+            width={1400}
+            height={900}
+            className="rounded-xl border bg-white shadow-lg"
+          />
         </div>
       </div>
-    </div>
-    <Image src={'/dashboard.png'}
-        alt='dashboard'
-        width={1400}
-        height={900}
-        className='-mt-9 rounded-xl border-2'
-        />
-  </section>
-
-  )
+    </section>
+  );
 }
 
-export default Hero
+export default Hero;

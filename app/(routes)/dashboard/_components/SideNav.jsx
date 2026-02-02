@@ -43,11 +43,16 @@ const path=usePathname();
 
   return ( 
     <div className='h-screen p-5 border shadow-sm'>
-        <Image src={'/logo.svg'}
-        alt='logo'
-        width={160}
-        height = {100} 
+        <Link href="/dashboard" className="inline-block">
+        <Image
+            src="/logo.svg"
+            alt="logo"
+            width={320}
+            height={200}
+            className="cursor-pointer"
         />
+        </Link>
+
         <div className='mt-5'>
             {menuList.map((menu)=>(
                 <Link key={menu.id} href={menu.path} onClick={() => setSidebarOpen(false)}>
