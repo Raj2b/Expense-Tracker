@@ -52,7 +52,7 @@ function Hero() {
         {/* Dashboard preview (keep it bright + clean) */}
         <div className="relative z-20 -mt-16 sm:-mt-20 px-4">
           <Image
-            src="/dashboardnew.png"
+            src="/dashboard1.png"
             alt="Dashboard preview"
             width={1400}
             height={900}

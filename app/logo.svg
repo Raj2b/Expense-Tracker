@@ -1,0 +1,23 @@
+<svg
+  width="404"
+  height="80"
+  viewBox="0 0 202 40"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <!-- Centered Mark -->
+  <rect
+    x="8"
+    y="4"
+    width="32"
+    height="32"
+    rx="10"
+    fill="#2563EB"
+  />
+  <path
+    d="M16 14H32M16 20H30M16 26H32"
+    stroke="white"
+    stroke-width="4.2"
+    stroke-linecap="round"
+  />
+</svg>
